@@ -1,0 +1,23 @@
+{
+  "name": "ember-minesweeper",
+  "version": "0.0.0",
+  "description": "Playing with Ember",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blesh/ember-minesweeper"
+  },
+  "keywords": [
+    "ember",
+    "minesweeper"
+  ],
+  "author": "Ben Lesh <ben@benlesh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blesh/ember-minesweeper/issues"
+  },
+  "homepage": "https://github.com/blesh/ember-minesweeper"
+}

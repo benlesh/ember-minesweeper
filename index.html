@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="minesweeper.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<script type="text/x-handlebars">
+    <nav>
+        {{#link-to 'about'}}About{{/link-to}}
+        {{#link-to 'game'}}Game{{/link-to}}
+    </nav>
+    <div>
+        {{outlet}}
+    </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="index">
+    Index here.
+</script>
+
+<script type="text/x-handlebars" id="about">
+    About this?
+</script>
+
+<script type="text/x-handlebars" id="game">
+    <div class="grid">
+        {{#each rows}}
+        <div class="row">
+            {{#each cell in cells}}
+            <div {{action 'reveal' cell}}
+                {{bind-attr class=":cell cell.hidden:hidden"}}">
+                {{#if cell.mine && !cell.hidden}}
+                    <span class="mine"></span>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/handlebars/handlebars.min.js"></script>
+<script src="bower_components/ember/ember.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

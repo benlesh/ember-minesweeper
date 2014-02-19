@@ -1,0 +1,27 @@
+{
+  "name": "ember-minesweeper",
+  "version": "0.0.0",
+  "authors": [
+    "Ben Lesh <ben@benlesh.com>"
+  ],
+  "keywords": [
+    "Ember",
+    "Minesweeper"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.github.com/blesh/ember-minesweeper",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.4.0"
+  },
+  "resolutions": {
+    "ember": "~1.4.0"
+  }
+}
