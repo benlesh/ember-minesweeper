@@ -9,7 +9,7 @@
 <script type="text/x-handlebars">
     <nav>
         {{#link-to 'about'}}About{{/link-to}}
-        {{#link-to 'game'}}Game{{/link-to}}
+        {{#link-to 'index'}}Game{{/link-to}}
     </nav>
     <div>
         {{outlet}}
@@ -17,28 +17,35 @@
 </script>
 
 <script type="text/x-handlebars" data-template-name="index">
-    Index here.
+    <div class="grid">
+        {{#each rows}}
+            <div class="row">
+                {{#each cell in cells}}
+                    {{#view App.CellView itemBinding="cell"}}
+                    <div {{bind-attr class=":cell cell.hidden:hidden"}}">
+                        {{#unless cell.hidden}}
+                            {{#if cell.mine}}
+                                <span class="mine"></span>
+                            {{else}}
+                                {{#if cell.nearby}}
+                                    <span {{bind-attr class="cell.nearbyClass"}}>{{cell.nearby}}</span>
+                                {{/if}}
+                            {{/if}}
+                        {{else}}
+                            {{#if cell.flag}}
+                            <span class="flag"></span>
+                            {{/if}}
+                        {{/unless}}
+                    </div>
+                    {{/view}}
+                {{/each}}
+            </div>
+        {{/each}}
+    </div>
 </script>
 
 <script type="text/x-handlebars" id="about">
-    About this?
-</script>
-
-<script type="text/x-handlebars" id="game">
-    <div class="grid">
-        {{#each rows}}
-        <div class="row">
-            {{#each cell in cells}}
-            <div {{action 'reveal' cell}}
-                {{bind-attr class=":cell cell.hidden:hidden"}}">
-                {{#if cell.mine && !cell.hidden}}
-                    <span class="mine"></span>
-                {{/if}}
-            </div>
-            {{/each}}
-        </div>
-        {{/each}}
-    </div>
+    I'm making something I've already done in Angular, to see the differences.
 </script>
 
 <script src="bower_components/jquery/jquery.min.js"></script>
